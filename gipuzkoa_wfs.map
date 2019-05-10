@@ -1,0 +1,95 @@
+map
+	config proj_lib /usr/local/share/proj
+	name gipuzkoa_wfs
+	status on
+	size 600 600
+	extent 530000 4740000 610000 4820000
+	units meters
+	imagecolor 255 255 255
+	projection
+		"init=epsg:25830"
+	end
+	outputformat
+		name png
+		mimetype image/png
+		driver agg/png
+		extension png
+		imagemode rgba
+		transparent true
+	end
+	outputformat
+		name "geojson"
+		driver "OGR/GEOJSON"
+		mimetype "application/json; subtype=geojson"
+		formatoption "STORAGE=stream"
+		formatoption "FORM=SIMPLE"
+	end
+	web
+		metadata
+			ows_enable_request "*"
+			wfs_title "Locate"
+			wfs_abstract "Locate. The engine used to server is UMN MapServer"
+			wfs_keywordlist "Locate WFS/WMS"
+			wfs_onlineresource "https://webdesa/ogc/wfs/gipuzkoa_wfs?"
+			wfs_accessconstraints "https://webdesa/info/en/legal-information/"
+			wfs_srs "EPSG:25830 EPSG:23030 EPSG:4326 EPSG:32630 EPSG:4230 EPSG:900913 EPSG:3857"
+			wfs_enable_request "*"
+			wfs_getfeature_formatlist "gml,geojson"
+			wfs_maxfeatures "100"
+		end
+	end
+	layer
+		name "locate_m"
+		type polygon
+		status on
+		connectiontype oraclespatial
+		connection "mapas_otros/web+@gis1"
+		data "geom from gen_toponimia_3d_m using srid 25830 version 10g"
+		dump true
+		encoding "ISO-8859-1"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Locate_m"
+			wfs_abstract "Locate_m"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "IDUT"
+			wfs_enable_request "*"
+		end
+	end
+	layer
+		name "locate_d"
+		type polygon
+		status on
+		connectiontype oraclespatial
+		connection "mapas_otros/web+@gis1"
+		data "geom from gen_toponimia_3d_d using srid 25830 version 10g"
+		dump true
+		encoding "ISO-8859-1"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Locate_d"
+			wfs_abstract "Locate_d"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "IDUT"
+			wfs_enable_request "*"
+		end
+	end
+end

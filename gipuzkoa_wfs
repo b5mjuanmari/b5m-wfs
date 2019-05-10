@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MS_MAPFILE="${0}.map"
+export MS_MAPFILE
+/home/develop/cgi-bin/mapserv
