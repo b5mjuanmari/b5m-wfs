@@ -39,12 +39,12 @@ map
 		end
 	end
 	layer
-		name "locate_m"
+		name "m_municipalities"
 		type polygon
 		status on
 		connectiontype oraclespatial
-		connection "mapas_otros/web+@gis1"
-		data "geom from gen_toponimia_3d_m using srid 25830 version 10g"
+		connection "o_mw_25830/web+@bdet"
+		data "geom from gi_wfs_m using srid 25830 version 10g"
 		dump true
 		encoding "ISO-8859-1"
 		projection
@@ -57,21 +57,21 @@ map
 			end
 		end
 		metadata
-			wfs_title "Locate_m"
-			wfs_abstract "Locate_m"
+			wfs_title "Udalerriak / Municipios / Municipalities"
+			wfs_abstract "B5m code M"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
-			gml_featureid "IDUT"
+			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
 		end
 	end
 	layer
-		name "locate_d"
+		name "d_postaladdresses"
 		type polygon
 		status on
 		connectiontype oraclespatial
-		connection "mapas_otros/web+@gis1"
-		data "geom from gen_toponimia_3d_d using srid 25830 version 10g"
+		connection "o_mw_25830/web+@bdet"
+		data "geom from gi_wfs_d using srid 25830 version 10g"
 		dump true
 		encoding "ISO-8859-1"
 		projection
@@ -84,11 +84,65 @@ map
 			end
 		end
 		metadata
-			wfs_title "Locate_d"
-			wfs_abstract "Locate_d"
+			wfs_title "Posta helbideak / Direcciones postales / Postal Addresses"
+			wfs_abstract "B5m code D"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
-			gml_featureid "IDUT"
+			gml_featureid "B5MCODE"
+			wfs_enable_request "*"
+		end
+	end
+	layer
+		name "sg_geodeticbenchmarks"
+		type point
+		status on
+		connectiontype oraclespatial
+		connection "o_mw_25830/web+@bdet"
+		data "geom from gi_wfs_sg using srid 25830 version 10g"
+		dump true
+		#encoding "ISO-8859-1"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Seinale geodesikoak / Señales geodésicas / Geodetic Benchmarks"
+			wfs_abstract "B5m code SG"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "B5MCODE"
+			wfs_enable_request "*"
+		end
+	end
+	layer
+		name "dm_distancemunicipalities"
+		type line
+		status on
+		connectiontype oraclespatial
+		connection "o_mw_25830/web+@bdet"
+		data "geom from gi_wfs_dm using srid 25830 version 10g"
+		dump true
+		#encoding "ISO-8859-1"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Udalerrien arteko distantzia / Distancia entre municipios / Distance Between Municipalities"
+			wfs_abstract "B5m code DM"
+			wfs_extent "356000 4613000 753000 4839000"
+			gml_include_items "all"
+			gml_featureid "B5M_ID"
 			wfs_enable_request "*"
 		end
 	end
