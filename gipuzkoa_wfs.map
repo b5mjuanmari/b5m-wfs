@@ -43,7 +43,7 @@ map
 		type polygon
 		status on
 		connectiontype oraclespatial
-		connection "o_mw_25830/web+@bdet"
+		connection "b5mweb_25830/web+@bdet"
 		data "geom from gi_wfs_m using srid 25830 version 10g"
 		dump true
 		encoding "ISO-8859-1"
@@ -70,7 +70,7 @@ map
 		type polygon
 		status on
 		connectiontype oraclespatial
-		connection "o_mw_25830/web+@bdet"
+		connection "b5mweb_25830/web+@bdet"
 		data "geom from gi_wfs_d using srid 25830 version 10g"
 		dump true
 		encoding "ISO-8859-1"
@@ -97,7 +97,7 @@ map
 		type point
 		status on
 		connectiontype oraclespatial
-		connection "o_mw_25830/web+@bdet"
+		connection "b5mweb_25830/web+@bdet"
 		data "geom from gi_wfs_sg using srid 25830 version 10g"
 		dump true
 		#encoding "ISO-8859-1"
@@ -124,7 +124,7 @@ map
 		type line
 		status on
 		connectiontype oraclespatial
-		connection "o_mw_25830/web+@bdet"
+		connection "b5mweb_25830/web+@bdet"
 		data "geom from gi_wfs_dm using srid 25830 version 10g"
 		dump true
 		#encoding "ISO-8859-1"
