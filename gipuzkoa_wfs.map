@@ -142,7 +142,7 @@ map
 			wfs_abstract "B5m code DM"
 			wfs_extent "356000 4613000 753000 4839000"
 			gml_include_items "all"
-			gml_featureid "B5M_ID"
+			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
 		end
 	end
