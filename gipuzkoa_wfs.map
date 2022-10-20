@@ -5,6 +5,7 @@ map
 	size 600 600
 	extent 530000 4740000 610000 4820000
 	units meters
+	shapepath "/home5/GPKG"
 	imagecolor 255 255 255
 	projection
 		"init=epsg:25830"
@@ -42,11 +43,11 @@ map
 		name "m_municipalities"
 		type polygon
 		status on
-		connectiontype oraclespatial
-		connection "b5mweb_25830/web+@bdet"
-		data "geom from gi_wfs_m using srid 25830 version 10g"
-		dump true
-		encoding "ISO-8859-1"
+		connectiontype ogr
+		connection "m_municipalities.gpkg"
+		data "m_municipalities"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
 		projection
 			"init=epsg:25830"
 		end
@@ -63,17 +64,18 @@ map
 			gml_include_items "all"
 			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
 	layer
 		name "d_postaladdresses"
 		type polygon
 		status on
-		connectiontype oraclespatial
-		connection "b5mweb_25830/web+@bdet"
-		data "geom from gi_wfs_d using srid 25830 version 10g"
-		dump true
-		encoding "ISO-8859-1"
+		connectiontype ogr
+		connection "d_postaladdresses.gpkg"
+		data "d_postaladdresses"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
 		projection
 			"init=epsg:25830"
 		end
@@ -90,17 +92,18 @@ map
 			gml_include_items "all"
 			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
 	layer
 		name "sg_geodeticbenchmarks"
 		type point
 		status on
-		connectiontype oraclespatial
-		connection "b5mweb_25830/web+@bdet"
-		data "geom from gi_wfs_sg using srid 25830 version 10g"
-		dump true
-		#encoding "ISO-8859-1"
+		connectiontype ogr
+		connection "sg_geodeticbenchmarks.gpkg"
+		data "sg_geodeticbenchmarks"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
 		projection
 			"init=epsg:25830"
 		end
@@ -117,17 +120,22 @@ map
 			gml_include_items "all"
 			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
 	layer
 		name "dm_distancemunicipalities"
 		type line
 		status on
+		#connectiontype ogr
+		#connection "dm_distancemunicipalities.gpkg"
+		#data "dm_distancemunicipalities"
 		connectiontype oraclespatial
 		connection "b5mweb_25830/web+@bdet"
 		data "geom from gi_wfs_dm using srid 25830 version 10g"
-		dump true
-		#encoding "ISO-8859-1"
+		#extent 356000 4613000 753000 4839000
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
 		projection
 			"init=epsg:25830"
 		end
@@ -141,9 +149,11 @@ map
 			wfs_title "Udalerrien arteko distantzia / Distancia entre municipios / Distance Between Municipalities"
 			wfs_abstract "B5m code DM"
 			wfs_extent "356000 4613000 753000 4839000"
+			wfs_geomtype "MultiLine"
 			gml_include_items "all"
 			gml_featureid "B5MCODE"
 			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
 end
