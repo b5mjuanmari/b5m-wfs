@@ -40,6 +40,34 @@ map
 		end
 	end
 	layer
+		name "s_regions"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "s_regions.gpkg"
+		data "s_regions"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Eskualdeak / Comarcas / Regions"
+			wfs_abstract "B5m code S"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "B5MCODE"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
 		name "m_municipalities"
 		type polygon
 		status on
