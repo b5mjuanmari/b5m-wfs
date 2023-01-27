@@ -96,62 +96,6 @@ map
 		end
 	end
 	layer
-		name "d_postaladdresses"
-		type polygon
-		status on
-		connectiontype ogr
-		connection "d_postaladdresses.gpkg"
-		data "d_postaladdresses"
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Posta helbideak / Direcciones postales / Postal Addresses"
-			wfs_abstract "B5m code D"
-			wfs_extent "530000 4740000 610000 4820000"
-			gml_include_items "all"
-			gml_featureid "B5MCODE"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-		end
-	end
-	layer
-		name "e_buildings"
-		type polygon
-		status on
-		connectiontype ogr
-		connection "e_buildings.gpkg"
-		data "e_buildings"
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Eraikinak / Edificios / Builings"
-			wfs_abstract "B5m code E"
-			wfs_extent "530000 4740000 610000 4820000"
-			gml_include_items "all"
-			gml_featureid "B5MCODE"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-		end
-	end
-	layer
 		name "c_basins"
 		type polygon
 		status on
@@ -200,6 +144,62 @@ map
 		metadata
 			wfs_title "Hidrografia / Hidrografía / Hydrography"
 			wfs_abstract "B5m code I"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "B5MCODE"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
+		name "d_postaladdresses"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "d_postaladdresses.gpkg"
+		data "d_postaladdresses"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Posta helbideak / Direcciones postales / Postal Addresses"
+			wfs_abstract "B5m code D"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "B5MCODE"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
+		name "e_buildings"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "e_buildings.gpkg"
+		data "e_buildings"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Eraikinak / Edificios / Builings"
+			wfs_abstract "B5m code E"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "B5MCODE"
