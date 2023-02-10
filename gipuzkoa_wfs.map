@@ -5,7 +5,7 @@ map
 	size 600 600
 	extent 530000 4740000 610000 4820000
 	units meters
-	shapepath "/home5/GPKG"
+	shapepath "/home/data/gpkg"
 	imagecolor 255 255 255
 	projection
 		"init=epsg:25830"
