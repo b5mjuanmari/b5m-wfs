@@ -31,7 +31,7 @@ map
 			wfs_title "Locate"
 			wfs_abstract "Locate. The engine used to server is UMN MapServer"
 			wfs_keywordlist "Locate WFS/WMS"
-			wfs_onlineresource "https://b5mdev/ogc/wfs/gipuzkoa_wfs?"
+			wfs_onlineresource "https://b5mdev/ogc/wfs2/gipuzkoa_wfs?"
 			wfs_accessconstraints "https://b5mdev/info/en/legal-information/"
 			wfs_srs "EPSG:25830 EPSG:23030 EPSG:4326 EPSG:32630 EPSG:4230 EPSG:900913 EPSG:3857"
 			wfs_enable_request "*"
@@ -63,6 +63,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -91,6 +92,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -119,6 +121,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -147,6 +150,36 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
+		name "z_districts"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "z_districts.gpkg"
+		data "z_districts"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Barrios y/o nombres urbanos / Auzo eta/edo hiri izenak / Districts and/or urban names"
+			wfs_abstract "B5m code Z"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -175,6 +208,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -198,11 +232,12 @@ map
 			end
 		end
 		metadata
-			wfs_title "Eraikinak / Edificios / Builings"
+			wfs_title "Eraikinak / Edificios / Buildings"
 			wfs_abstract "B5m code E"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -231,6 +266,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -244,6 +280,7 @@ map
 		#data "dm_distancemunicipalities"
 		connectiontype oraclespatial
 		connection "b5mweb_25830/web+@bdet"
+		#data "geom from gi_dm_distancem using srid 25830 version 10g"
 		data "geom from gi_wfs_dm using srid 25830 version 10g"
 		#extent 356000 4613000 753000 4839000
 		processing "CLOSE_CONNECTION=DEFER"
@@ -289,6 +326,7 @@ map
 			gml_dm_date_alias "dm_date"
 			gml_geom_alias "geom"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
@@ -317,6 +355,7 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
 			gml_featureid "b5mcode"
+			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
