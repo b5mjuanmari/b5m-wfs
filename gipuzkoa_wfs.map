@@ -185,6 +185,35 @@ map
 		end
 	end
 	layer
+		name "g_orography"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "g_orography.gpkg"
+		data "g_orography"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Toponimia de la orografía / Orografiaren toponimia / Toponymy of the orography"
+			wfs_abstract "B5m code G"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
 		name "d_postaladdresses"
 		type polygon
 		status on
