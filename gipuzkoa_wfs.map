@@ -301,6 +301,96 @@ map
 		end
 	end
 	layer
+		name "dw_download"
+		type polygon
+		status on
+		connectiontype union
+		connection "dw_download_5,dw_download_1"
+		processing "CLOSE_CONNECTION=DEFER"
+		processing "ITEMS=b5mcode,name_grid_eu,name_grid_es,type_grid_eu,type_grid_es,type_grid_en,types_dw"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Descargas / Deskargak / Downloads"
+			wfs_abstract "B5m code DW"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_exclude_items "fid,b5mcode2"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
+		name "dw_download_1"
+		type polygon
+		status off
+		connectiontype ogr
+		connection "dw_download.gpkg"
+		data "dw_download_view_1"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Descargas / Deskargak / Downloads (1x1 km)"
+			wfs_abstract "B5m code DW grid 1x1 km"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_exclude_items "fid,b5mcode2"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "!*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
+		name "dw_download_5"
+		type polygon
+		status off
+		connectiontype ogr
+		connection "dw_download.gpkg"
+		data "dw_download_view_5"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Descargas / Deskargak / Downloads (5x5 km)"
+			wfs_abstract "B5m code DW grid 5x5 km"
+			wfs_extent "530000 4740000 610000 4820000"
+			gml_include_items "all"
+			gml_exclude_items "fid,b5mcode2"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "!*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
+	layer
 		name "sg_geodeticbenchmarks"
 		type point
 		status on
