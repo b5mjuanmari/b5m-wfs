@@ -58,7 +58,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Eskualdeak / Comarcas / Regions"
+			wfs_title "Eskualdea / Comarca / Region"
 			wfs_abstract "B5m code S"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -87,7 +87,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Udalerriak / Municipios / Municipalities"
+			wfs_title "Udalerria / Municipio / Municipality"
 			wfs_abstract "B5m code M"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -116,7 +116,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Arroak / Cuencas / Basins"
+			wfs_title "Arroa / Cuenca / Basin"
 			wfs_abstract "B5m code C"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -174,7 +174,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Barrios y/o nombres urbanos / Auzo eta/edo hiri izenak / Districts and/or urban names"
+			wfs_title "Barrio y/o nombre urbano / Auzo eta/edo hiri izena / District and/or urban name"
 			wfs_abstract "B5m code Z"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -232,7 +232,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Posta helbideak / Direcciones postales / Postal Addresses"
+			wfs_title "Posta helbidea / Dirección postal / Postal Address"
 			wfs_abstract "B5m code D"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -261,7 +261,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Eraikinak / Edificios / Buildings"
+			wfs_title "Eraikina / Edificio / Building"
 			wfs_abstract "B5m code E"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
@@ -409,7 +409,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Seinale geodesikoak / Señales geodésicas / Geodetic Benchmarks"
+			wfs_title "Seinale geodesikoa / Señal geodésica / Geodetic Benchmark"
 			wfs_abstract "B5m code SG"
 			wfs_extent "530000 4740000 610000 4820000"
 			gml_include_items "all"
