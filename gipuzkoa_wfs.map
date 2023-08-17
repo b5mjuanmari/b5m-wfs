@@ -185,7 +185,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Barrio y/o nombre urbano / Auzo eta/edo hiri izena / District and/or urban name"
+			wfs_title "Auzo eta/edo hiri izena / Barrio y/o nombre urbano / District and/or urban name"
 			wfs_abstract "B5m code Z"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
