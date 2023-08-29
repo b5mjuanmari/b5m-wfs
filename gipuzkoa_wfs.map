@@ -36,7 +36,7 @@ map
 			wfs_srs "EPSG:25830 EPSG:23030 EPSG:4326 EPSG:32630 EPSG:4230 EPSG:900913 EPSG:3857"
 			wfs_enable_request "*"
 			wfs_getfeature_formatlist "gml,geojson"
-			wfs_maxfeatures "100"
+			wfs_maxfeatures "10000"
 		end
 	end
 	layer
@@ -354,7 +354,7 @@ map
 	layer
 		name "dw_download_1"
 		type polygon
-		status off
+		status on
 		connectiontype ogr
 		connection "dw_download.gpkg"
 		data "dw_download_view_1"
@@ -379,14 +379,14 @@ map
 			gml_exclude_items "fid,b5mcode2"
 			gml_featureid "b5mcode"
 			gml_types "auto"
-			wfs_enable_request "!*"
+			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
 	layer
 		name "dw_download_5"
 		type polygon
-		status off
+		status on
 		connectiontype ogr
 		connection "dw_download.gpkg"
 		data "dw_download_view_5"
@@ -411,7 +411,7 @@ map
 			gml_exclude_items "fid,b5mcode2"
 			gml_featureid "b5mcode"
 			gml_types "auto"
-			wfs_enable_request "!*"
+			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
