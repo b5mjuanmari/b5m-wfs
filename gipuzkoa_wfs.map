@@ -327,7 +327,7 @@ map
 		connectiontype union
 		connection "dw_download_5,dw_download_1"
 		processing "CLOSE_CONNECTION=DEFER"
-		processing "ITEMS=b5mcode,name_grid_eu,name_grid_es,type_grid_eu,type_grid_es,type_grid_en,types_dw"
+		processing "ITEMS=b5mcode,name_grid_eu,name_grid_es,type_grid_eu,type_grid_es,type_grid_en,official,types_dw"
 		encoding "UTF-8"
 		projection
 			"init=epsg:25830"
@@ -481,7 +481,7 @@ map
 			wfs_geomtype "MultiLine"
 			wms_include_items "all"
 			gml_include_items "all"
-			gml_iddm_alias "iddm"
+			gml_idut_alias "iddm"
 			gml_b5mcode_alias "b5mcode"
 			gml_codmuni1_alias "codmuni1"
 			gml_muni1_eu_alias "muni1_eu"
@@ -504,7 +504,8 @@ map
 			gml_idarea2_alias "idarea_2"
 			gml_dist_r_alias "dist_r"
 			gml_dist_c_alias "dist_c"
-			gml_dm_date_alias "dm_date"
+			gml_fecha_alias "dm_date"
+			gml_official_alias "official"
 			gml_geom_alias "geom"
 			gml_featureid "b5mcode"
 			gml_types "auto"
