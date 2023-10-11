@@ -217,7 +217,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Toponimia de la orografía / Orografiaren toponimia / Toponymy of the orography"
+			wfs_title "Orografiaren toponimia / Toponimia de la orografía / Toponymy of the orography"
 			wfs_abstract "B5m code G"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
@@ -310,7 +310,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Cuadrícula / Lauki-sarea / Grid"
+			wfs_title "Lauki-sarea / Cuadrícula / Grid"
 			wfs_abstract "B5m code R"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
@@ -340,7 +340,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Descargas / Deskargak / Downloads"
+			wfs_title "Deskargak / Descargas / Downloads"
 			wfs_abstract "B5m code DW"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
@@ -372,7 +372,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Descargas / Deskargak / Downloads (1x1 km)"
+			wfs_title "Deskargak / Descargas / Downloads (1x1 km)"
 			wfs_abstract "B5m code DW grid 1x1 km"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
@@ -404,7 +404,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Descargas / Deskargak / Downloads (5x5 km)"
+			wfs_title "Deskargak / Descargas / Downloads (5x5 km)"
 			wfs_abstract "B5m code DW grid 5x5 km"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
