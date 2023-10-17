@@ -164,12 +164,12 @@ map
 		end
 	end
 	layer
-		name "k_streets"
+		name "k_streets_buildings"
 		type polygon
 		status on
 		connectiontype ogr
-		connection "k_streets.gpkg"
-		data "k_streets"
+		connection "k_streets_buildings.gpkg"
+		data "k_streets_buildings"
 		template "empty"
 		processing "CLOSE_CONNECTION=DEFER"
 		encoding "UTF-8"
@@ -183,7 +183,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Kaleak / Calles / Streets"
+			wfs_title "Kalea (eraikin multzoa) / Calle (conjunto de edificios) / Street (building set)"
 			wfs_abstract "B5m code K"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
