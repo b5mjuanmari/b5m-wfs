@@ -577,4 +577,37 @@ map
 			wfs_use_default_extent_for_getfeature "false"
 		end
 	end
+	layer
+		name "poi_pointsofinterest"
+		type point
+		status on
+		connectiontype ogr
+		connection "poi_pointsofinterest.gpkg"
+		data "poi_pointsofinterest"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Interesgunea / Punto de interés / Point of Interest"
+			wfs_abstract "B5m code POI"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+		end
+	end
 end
