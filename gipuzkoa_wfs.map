@@ -444,7 +444,6 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
 			gml_include_items "all"
-			gml_exclude_items "id_levan"
 			gml_featureid "b5mcode"
 			gml_types "auto"
 			wfs_enable_request "*"
@@ -490,6 +489,38 @@ map
 	end
 
 	# 14. em_megalithicsites
+	layer
+		name "em_megalithicsites"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "em_megalithicsites.gpkg"
+		data "em_megalithicsites"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Estazio megalitikoa / Estación megalítica / Megalith Site"
+			wfs_abstract "B5m code EM"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 
 	# 15. gk_megaliths
 
