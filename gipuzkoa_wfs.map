@@ -39,38 +39,8 @@ map
 			wfs_maxfeatures "10000"
 		end
 	end
-	layer
-		name "s_regions"
-		type polygon
-		status on
-		connectiontype ogr
-		connection "s_regions.gpkg"
-		data "s_regions"
-		template "empty"
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Eskualdea / Comarca / Region"
-			wfs_abstract "B5m code S"
-			wfs_extent "530000 4740000 610000 4820000"
-			wms_include_items "all"
-			gml_include_items "all"
-			gml_featureid "b5mcode"
-			gml_types "auto"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-			ows_geomtype "Geometry"
-		end
-	end
+
+	# 1. m_municipalities
 	layer
 		name "m_municipalities"
 		type polygon
@@ -103,6 +73,42 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 2. s_regions
+	layer
+		name "s_regions"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "s_regions.gpkg"
+		data "s_regions"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Eskualdea / Comarca / Region"
+			wfs_abstract "B5m code S"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 3. d_postaladdresses
 	layer
 		name "d_postaladdresses"
 		type polygon
@@ -135,6 +141,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 4. e_buildings
 	layer
 		name "e_buildings"
 		type polygon
@@ -167,6 +175,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 5. k_streets_buildings
 	layer
 		name "k_streets_buildings"
 		type polygon
@@ -199,6 +209,7 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+	# 6. v_streets_axis
 	layer
 		name "v_streets_axis"
 		type line
@@ -232,6 +243,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 7. c_basins
 	layer
 		name "c_basins"
 		type polygon
@@ -264,6 +277,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 8. i_hydrography
 	layer
 		name "i_hydrography"
 		type line
@@ -299,6 +314,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 9. z_districts
 	layer
 		name "z_districts"
 		type polygon
@@ -331,6 +348,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 10. g_orography
 	layer
 		name "g_orography"
 		type polygon
@@ -363,6 +382,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 11. t_roads_railways
 	layer
 		name "t_roads_railways"
 		type line
@@ -396,6 +417,191 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 12. q_municipalcartography
+	layer
+		name "q_municipalcartography"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "q_municipalcartography.gpkg"
+		data "q_municipalcartography"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Udal kartografia / Cartografía municipal / Municipal Cartography"
+			wfs_abstract "B5m code Q"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_exclude_items "id_levan"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 13. sg_geodeticbenchmarks
+	layer
+		name "sg_geodeticbenchmarks"
+		type point
+		status on
+		connectiontype ogr
+		connection "sg_geodeticbenchmarks.gpkg"
+		data "sg_geodeticbenchmarks"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Seinale geodesikoa / Señal geodésica / Geodetic Benchmark"
+			wfs_abstract "B5m code SG"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 14. em_megalithicsites
+
+	# 15. gk_megaliths
+
+	# 16. cv_speleology
+
+	# 17. bi_biotopes
+
+	# 18. poi_pointsofinterest
+	layer
+		name "poi_pointsofinterest"
+		type point
+		status on
+		connectiontype ogr
+		connection "poi_pointsofinterest.gpkg"
+		data "poi_pointsofinterest"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Interesgunea / Punto de interés / Point of Interest"
+			wfs_abstract "B5m code POI"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 19. dm_distancemunicipalities
+	layer
+		name "dm_distancemunicipalities"
+		type line
+		status on
+		#connectiontype ogr
+		#connection "dm_distancemunicipalities.gpkg"
+		#data "dm_distancemunicipalities"
+		connectiontype oraclespatial
+		connection "b5mweb_25830/web+@bdet"
+		#data "geom from gi_dm_distancem using srid 25830 version 10g"
+		data "geom from gi_wfs_dm using srid 25830 version 10g"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		#extent 356000 4613000 753000 4839000
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Udalerrien arteko distantzia / Distancia entre municipios / Distance Between Municipalities"
+			wfs_abstract "B5m code DM"
+			wfs_extent "356000 4613000 753000 4839000"
+			wfs_geomtype "MultiLine"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_exclude_items "idut"
+			gml_b5mcode_alias "b5mcode"
+			gml_codmuni1_alias "codmuni1"
+			gml_muni1_eu_alias "muni1_eu"
+			gml_muni1_es_alias "muni1_es"
+			gml_muni1_fr_alias "muni1_fr"
+			gml_codterm1_alias "codterm1"
+			gml_term1_eu_alias "term1_eu"
+			gml_term1_es_alias "term1_es"
+			gml_term1_fr_alias "term1_fr"
+			gml_id_area1_alias "id_area1"
+			gml_codmuni2_alias "codmuni2"
+			gml_muni2_eu_alias "muni2_eu"
+			gml_muni2_es_alias "muni2_es"
+			gml_muni2_fr_alias "muni2_fr"
+			gml_codterm2_alias "codterm2"
+			gml_term2_eu_alias "term2_eu"
+			gml_term2_es_alias "term2_es"
+			gml_term2_fr_alias "term2_fr"
+			gml_id_area2_alias "id_area2"
+			gml_idarea2_alias "idarea_2"
+			gml_dist_r_alias "dist_r"
+			gml_dist_c_alias "dist_c"
+			gml_fecha_alias "dm_date"
+			gml_official_alias "official"
+			gml_geom_alias "geom"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 20. r_grid
 	layer
 		name "r_grid"
 		type polygon
@@ -428,6 +634,8 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 21. dw_download
 	layer
 		name "dw_download"
 		type polygon
@@ -519,173 +727,6 @@ map
 			wms_include_items "all"
 			gml_include_items "all"
 			gml_exclude_items "fid,b5mcode2"
-			gml_featureid "b5mcode"
-			gml_types "auto"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-			ows_geomtype "Geometry"
-		end
-	end
-	layer
-		name "sg_geodeticbenchmarks"
-		type point
-		status on
-		connectiontype ogr
-		connection "sg_geodeticbenchmarks.gpkg"
-		data "sg_geodeticbenchmarks"
-		template "empty"
-		tolerance 30
-		toleranceunits meters
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Seinale geodesikoa / Señal geodésica / Geodetic Benchmark"
-			wfs_abstract "B5m code SG"
-			wfs_extent "530000 4740000 610000 4820000"
-			wms_include_items "all"
-			gml_include_items "all"
-			gml_featureid "b5mcode"
-			gml_types "auto"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-			ows_geomtype "Geometry"
-		end
-	end
-	layer
-		name "dm_distancemunicipalities"
-		type line
-		status on
-		#connectiontype ogr
-		#connection "dm_distancemunicipalities.gpkg"
-		#data "dm_distancemunicipalities"
-		connectiontype oraclespatial
-		connection "b5mweb_25830/web+@bdet"
-		#data "geom from gi_dm_distancem using srid 25830 version 10g"
-		data "geom from gi_wfs_dm using srid 25830 version 10g"
-		template "empty"
-		tolerance 30
-		toleranceunits meters
-		#extent 356000 4613000 753000 4839000
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Udalerrien arteko distantzia / Distancia entre municipios / Distance Between Municipalities"
-			wfs_abstract "B5m code DM"
-			wfs_extent "356000 4613000 753000 4839000"
-			wfs_geomtype "MultiLine"
-			wms_include_items "all"
-			gml_include_items "all"
-			gml_exclude_items "idut"
-			gml_b5mcode_alias "b5mcode"
-			gml_codmuni1_alias "codmuni1"
-			gml_muni1_eu_alias "muni1_eu"
-			gml_muni1_es_alias "muni1_es"
-			gml_muni1_fr_alias "muni1_fr"
-			gml_codterm1_alias "codterm1"
-			gml_term1_eu_alias "term1_eu"
-			gml_term1_es_alias "term1_es"
-			gml_term1_fr_alias "term1_fr"
-			gml_id_area1_alias "id_area1"
-			gml_codmuni2_alias "codmuni2"
-			gml_muni2_eu_alias "muni2_eu"
-			gml_muni2_es_alias "muni2_es"
-			gml_muni2_fr_alias "muni2_fr"
-			gml_codterm2_alias "codterm2"
-			gml_term2_eu_alias "term2_eu"
-			gml_term2_es_alias "term2_es"
-			gml_term2_fr_alias "term2_fr"
-			gml_id_area2_alias "id_area2"
-			gml_idarea2_alias "idarea_2"
-			gml_dist_r_alias "dist_r"
-			gml_dist_c_alias "dist_c"
-			gml_fecha_alias "dm_date"
-			gml_official_alias "official"
-			gml_geom_alias "geom"
-			gml_featureid "b5mcode"
-			gml_types "auto"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-			ows_geomtype "Geometry"
-		end
-	end
-	layer
-		name "q_municipalcartography"
-		type polygon
-		status on
-		connectiontype ogr
-		connection "q_municipalcartography.gpkg"
-		data "q_municipalcartography"
-		template "empty"
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Udal kartografia / Cartografía municipal / Municipal Cartography"
-			wfs_abstract "B5m code Q"
-			wfs_extent "530000 4740000 610000 4820000"
-			wms_include_items "all"
-			gml_include_items "all"
-			gml_exclude_items "id_levan"
-			gml_featureid "b5mcode"
-			gml_types "auto"
-			wfs_enable_request "*"
-			wfs_use_default_extent_for_getfeature "false"
-			ows_geomtype "Geometry"
-		end
-	end
-	layer
-		name "poi_pointsofinterest"
-		type point
-		status on
-		connectiontype ogr
-		connection "poi_pointsofinterest.gpkg"
-		data "poi_pointsofinterest"
-		template "empty"
-		tolerance 30
-		toleranceunits meters
-		processing "CLOSE_CONNECTION=DEFER"
-		encoding "UTF-8"
-		projection
-			"init=epsg:25830"
-		end
-		class
-			style
-				outlinecolor 0 0 0
-				color 120 120 120
-			end
-		end
-		metadata
-			wfs_title "Interesgunea / Punto de interés / Point of Interest"
-			wfs_abstract "B5m code POI"
-			wfs_extent "530000 4740000 610000 4820000"
-			wms_include_items "all"
-			gml_include_items "all"
 			gml_featureid "b5mcode"
 			gml_types "auto"
 			wfs_enable_request "*"
