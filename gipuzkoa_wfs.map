@@ -5,7 +5,7 @@ map
 	size 600 600
 	extent 530000 4740000 610000 4820000
 	units meters
-	shapepath "/home/data/gpkg"
+	shapepath "/home/data/gpkg2"
 	imagecolor 255 255 255
 	projection
 		"init=epsg:25830"
@@ -68,6 +68,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -99,6 +100,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -130,6 +132,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -161,6 +164,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -192,6 +196,40 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+	layer
+		name "v_streets_axis"
+		type line
+		status on
+		connectiontype ogr
+		connection "v_streets_axis.gpkg"
+		data "v_streets_axis"
+		template "empty"
+		tolerance 30
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Kalea (ardatza) / Calle (eje) / Street (axis)"
+			wfs_abstract "B5m code V"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -223,6 +261,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -257,6 +296,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -288,6 +328,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -319,6 +360,40 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+	layer
+		name "t_roads_railways"
+		type line
+		status on
+		connectiontype ogr
+		connection "t_roads_railways.gpkg"
+		data "t_roads_railways"
+		template "empty"
+		tolerance 30
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Errepidea eta trenbidea / Carretera y ferrocarril / Road and Railway"
+			wfs_abstract "B5m code T"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -350,6 +425,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -381,6 +457,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -413,6 +490,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -445,6 +523,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -478,6 +557,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -543,6 +623,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -575,6 +656,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 	layer
@@ -608,6 +690,7 @@ map
 			gml_types "auto"
 			wfs_enable_request "*"
 			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
 		end
 	end
 end
