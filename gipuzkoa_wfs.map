@@ -523,10 +523,110 @@ map
 	end
 
 	# 15. gk_megaliths
+	layer
+		name "gk_megaliths"
+		type point
+		status on
+		connectiontype ogr
+		connection "gk_megaliths.gpkg"
+		data "gk_megaliths"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Megalitoa / Megalito / Megalith"
+			wfs_abstract "B5m code GK"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 
 	# 16. cv_speleology
+	layer
+		name "cv_speleology"
+		type point
+		status on
+		connectiontype ogr
+		connection "cv_speleology.gpkg"
+		data "cv_speleology"
+		template "empty"
+		tolerance 30
+		toleranceunits meters
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Leizea eta espeleologia / Cueva y espeleología / Cave and speleology"
+			wfs_abstract "B5m code CV"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 
 	# 17. bi_biotopes
+	layer
+		name "bi_biotopes"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "bi_biotopes.gpkg"
+		data "bi_biotopes"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Biotopoak / Biotopos / Biotopes"
+			wfs_abstract "B5m code BI"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 
 	# 18. poi_pointsofinterest
 	layer
@@ -598,29 +698,21 @@ map
 			wfs_geomtype "MultiLine"
 			wms_include_items "all"
 			gml_include_items "all"
-			gml_exclude_items "idut"
+			gml_exclude_items "idut,codmuni1,codterm1,id_area1,codmuni2,codterm2,id_area2,dist_c"
 			gml_b5mcode_alias "b5mcode"
-			gml_codmuni1_alias "codmuni1"
 			gml_muni1_eu_alias "muni1_eu"
 			gml_muni1_es_alias "muni1_es"
 			gml_muni1_fr_alias "muni1_fr"
-			gml_codterm1_alias "codterm1"
 			gml_term1_eu_alias "term1_eu"
 			gml_term1_es_alias "term1_es"
 			gml_term1_fr_alias "term1_fr"
-			gml_id_area1_alias "id_area1"
-			gml_codmuni2_alias "codmuni2"
 			gml_muni2_eu_alias "muni2_eu"
 			gml_muni2_es_alias "muni2_es"
 			gml_muni2_fr_alias "muni2_fr"
-			gml_codterm2_alias "codterm2"
 			gml_term2_eu_alias "term2_eu"
 			gml_term2_es_alias "term2_es"
 			gml_term2_fr_alias "term2_fr"
-			gml_id_area2_alias "id_area2"
-			gml_idarea2_alias "idarea_2"
-			gml_dist_r_alias "dist_r"
-			gml_dist_c_alias "dist_c"
+			gml_dist_r_alias "distance_km"
 			gml_fecha_alias "dm_date"
 			gml_official_alias "official"
 			gml_geom_alias "geom"
