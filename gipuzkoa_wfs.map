@@ -669,17 +669,10 @@ map
 		name "dm_distancemunicipalities"
 		type line
 		status on
-		#connectiontype ogr
-		#connection "dm_distancemunicipalities.gpkg"
-		#data "dm_distancemunicipalities"
-		connectiontype oraclespatial
-		connection "b5mweb_25830/web+@bdet"
-		#data "geom from gi_dm_distancem using srid 25830 version 10g"
-		data "geom from gi_wfs_dm using srid 25830 version 10g"
+		connectiontype ogr
+		connection "dm_distancemunicipalities.gpkg"
+		data "dm_distancemunicipalities"
 		template "empty"
-		tolerance 30
-		toleranceunits meters
-		#extent 356000 4613000 753000 4839000
 		processing "CLOSE_CONNECTION=DEFER"
 		encoding "UTF-8"
 		projection
@@ -695,26 +688,8 @@ map
 			wfs_title "Udalerrien arteko distantzia / Distancia entre municipios / Distance Between Municipalities"
 			wfs_abstract "B5m code DM"
 			wfs_extent "356000 4613000 753000 4839000"
-			wfs_geomtype "MultiLine"
 			wms_include_items "all"
 			gml_include_items "all"
-			gml_exclude_items "idut,codmuni1,codterm1,id_area1,codmuni2,codterm2,id_area2,dist_c"
-			gml_b5mcode_alias "b5mcode"
-			gml_muni1_eu_alias "muni1_eu"
-			gml_muni1_es_alias "muni1_es"
-			gml_muni1_fr_alias "muni1_fr"
-			gml_term1_eu_alias "term1_eu"
-			gml_term1_es_alias "term1_es"
-			gml_term1_fr_alias "term1_fr"
-			gml_muni2_eu_alias "muni2_eu"
-			gml_muni2_es_alias "muni2_es"
-			gml_muni2_fr_alias "muni2_fr"
-			gml_term2_eu_alias "term2_eu"
-			gml_term2_es_alias "term2_es"
-			gml_term2_fr_alias "term2_fr"
-			gml_dist_r_alias "distance_km"
-			gml_fecha_alias "dm_date"
-			gml_official_alias "official"
 			gml_geom_alias "geom"
 			gml_featureid "b5mcode"
 			gml_types "auto"
