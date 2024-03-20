@@ -5,7 +5,7 @@ map
 	size 600 600
 	extent 530000 4740000 610000 4820000
 	units meters
-	shapepath "/home/data/gpkg2"
+	shapepath "/home/data/gpkg"
 	imagecolor 255 255 255
 	projection
 		"init=epsg:25830"
@@ -739,7 +739,7 @@ map
 		type polygon
 		status on
 		connectiontype union
-		connection "dw_download_5,dw_download_1"
+		connection "dw2_download_5,dw2_download_1,dw2_download_foto,dw2_download_mapa"
 		processing "CLOSE_CONNECTION=DEFER"
 		processing "ITEMS=b5mcode,name_grid_eu,name_grid_es,type_grid_eu,type_grid_es,type_grid_en,official,types_dw"
 		encoding "UTF-8"
@@ -767,7 +767,7 @@ map
 		end
 	end
 	layer
-		name "dw_download_1"
+		name "dw2_download_1"
 		type polygon
 		status on
 		connectiontype ogr
@@ -800,7 +800,7 @@ map
 		end
 	end
 	layer
-		name "dw_download_5"
+		name "dw2_download_5"
 		type polygon
 		status on
 		connectiontype ogr
@@ -821,6 +821,72 @@ map
 		metadata
 			wfs_title "Deskargak / Descargas / Downloads (5x5 km)"
 			wfs_abstract "B5m code DW grid 5x5 km"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_exclude_items "fid,b5mcode2"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+	layer
+		name "dw2_download_foto"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "dw_download.gpkg"
+		data "dw_download_view_foto"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Deskargak / Descargas / Downloads (foto)"
+			wfs_abstract "B5m code DW grid foto"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_exclude_items "fid,b5mcode2"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+	layer
+		name "dw2_download_mapa"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "dw_download.gpkg"
+		data "dw_download_view_mapa"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Deskargak / Descargas / Downloads (mapa)"
+			wfs_abstract "B5m code DW grid mapa"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
 			gml_include_items "all"
