@@ -209,6 +209,7 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
 	# 6. v_streets_axis
 	layer
 		name "v_streets_axis"
@@ -383,7 +384,7 @@ map
 		end
 	end
 
-	# 11. t_roads_railways
+	# 11.1. t_roads_railways
 	layer
 		name "t_roads_railways"
 		type line
@@ -410,6 +411,42 @@ map
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
 			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 11.2. kp_kilometre_points
+	layer
+		name "kp_kilometre_points"
+		type point
+		status on
+		connectiontype ogr
+		connection "t_roads_railways.gpkg"
+		data "kp_kilometre_points"
+		template "empty"
+		tolerance 30
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Errepidea eta trenbidea (kilometro puntuak)/ Carretera y ferrocarril (puntos kilométricos)/ Road and Railway (Kilometre Points)"
+			wfs_abstract "B5m code T"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_exclude_items "kpcode"
 			gml_featureid "b5mcode"
 			gml_types "auto"
 			wfs_enable_request "*"
