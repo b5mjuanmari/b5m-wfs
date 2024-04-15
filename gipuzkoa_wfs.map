@@ -266,7 +266,7 @@ map
 			end
 		end
 		metadata
-			wfs_title "Arroa / Cuenca / Basin"
+			wfs_title "Arro hidrografikoa / Cuenca hidrográfica / Hydrographic Basin"
 			wfs_abstract "B5m code C"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
