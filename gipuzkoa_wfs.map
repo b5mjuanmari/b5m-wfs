@@ -40,7 +40,41 @@ map
 		end
 	end
 
-	# 1. m_municipalities
+	# 1. h_historicalterritories
+	layer
+		name "h_historicalterritories"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "h_historicalterritories.gpkg"
+		data "h_historicalterritories"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Lurralde Historikoa / Territorio Histórico / Historical Territory"
+			wfs_abstract "B5m code H"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 2. m_municipalities
 	layer
 		name "m_municipalities"
 		type polygon
@@ -74,7 +108,7 @@ map
 		end
 	end
 
-	# 2. s_regions
+	# 3. s_regions
 	layer
 		name "s_regions"
 		type polygon
@@ -108,7 +142,7 @@ map
 		end
 	end
 
-	# 3. d_postaladdresses
+	# 4. d_postaladdresses
 	layer
 		name "d_postaladdresses"
 		type polygon
@@ -142,7 +176,7 @@ map
 		end
 	end
 
-	# 4. e_buildings
+	# 5. e_buildings
 	layer
 		name "e_buildings"
 		type polygon
@@ -176,7 +210,7 @@ map
 		end
 	end
 
-	# 5. k_streets_buildings
+	# 6. k_streets_buildings
 	layer
 		name "k_streets_buildings"
 		type polygon
@@ -210,7 +244,7 @@ map
 		end
 	end
 
-	# 6. v_streets_axis
+	# 7. v_streets_axis
 	layer
 		name "v_streets_axis"
 		type line
@@ -245,7 +279,7 @@ map
 		end
 	end
 
-	# 7. c_basins
+	# 8. c_basins
 	layer
 		name "c_basins"
 		type polygon
@@ -279,7 +313,7 @@ map
 		end
 	end
 
-	# 8. i_hydrography
+	# 9. i_hydrography
 	layer
 		name "i_hydrography"
 		type line
@@ -316,7 +350,7 @@ map
 		end
 	end
 
-	# 9. z_districts
+	# 10. z_districts
 	layer
 		name "z_districts"
 		type polygon
@@ -350,7 +384,7 @@ map
 		end
 	end
 
-	# 10. g_orography
+	# 11. g_orography
 	layer
 		name "g_orography"
 		type polygon
@@ -384,7 +418,7 @@ map
 		end
 	end
 
-	# 11.1. t_roads_railways
+	# 12.1. t_roads_railways
 	layer
 		name "t_roads_railways"
 		type line
@@ -419,7 +453,7 @@ map
 		end
 	end
 
-	# 11.2. kp_kilometre_points
+	# 12.2. kp_kilometre_points
 	layer
 		name "kp_kilometre_points"
 		type point
@@ -455,7 +489,7 @@ map
 		end
 	end
 
-	# 12. q_municipalcartography
+	# 13. q_municipalcartography
 	layer
 		name "q_municipalcartography"
 		type polygon
@@ -489,7 +523,7 @@ map
 		end
 	end
 
-	# 13. sg_geodeticbenchmarks
+	# 14. sg_geodeticbenchmarks
 	layer
 		name "sg_geodeticbenchmarks"
 		type point
@@ -525,7 +559,7 @@ map
 		end
 	end
 
-	# 14. em_megalithicsites
+	# 15. em_megalithicsites
 	layer
 		name "em_megalithicsites"
 		type polygon
@@ -559,7 +593,7 @@ map
 		end
 	end
 
-	# 15. gk_megaliths
+	# 16. gk_megaliths
 	layer
 		name "gk_megaliths"
 		type point
@@ -595,7 +629,7 @@ map
 		end
 	end
 
-	# 16. cv_speleology
+	# 17. cv_speleology
 	layer
 		name "cv_speleology"
 		type point
@@ -631,7 +665,7 @@ map
 		end
 	end
 
-	# 17. bi_biotopes
+	# 18. bi_biotopes
 	layer
 		name "bi_biotopes"
 		type polygon
@@ -665,7 +699,7 @@ map
 		end
 	end
 
-	# 18. poi_pointsofinterest
+	# 19. poi_pointsofinterest
 	layer
 		name "poi_pointsofinterest"
 		type point
@@ -701,7 +735,7 @@ map
 		end
 	end
 
-	# 19. dm_distancemunicipalities
+	# 20. dm_distancemunicipalities
 	layer
 		name "dm_distancemunicipalities"
 		type line
@@ -736,7 +770,7 @@ map
 		end
 	end
 
-	# 20. r_grid
+	# 21. r_grid
 	layer
 		name "r_grid"
 		type polygon
@@ -770,7 +804,7 @@ map
 		end
 	end
 
-	# 21. dw_download
+	# 22. dw_download
 	layer
 		name "dw_download"
 		type polygon
