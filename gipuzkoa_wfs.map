@@ -1002,4 +1002,72 @@ map
 			ows_geomtype "None"
 		end
 	end
+
+	# 23. ac_municipal_boundaries
+	layer
+		name "ac_municipal_boundaries"
+		type line
+		status on
+		connectiontype ogr
+		connection "ac_municipal_boundaries.gpkg"
+		data "ac_municipal_boundaries"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Udal muga / Límite municipal / Municipal Boundary"
+			wfs_abstract "B5m code AC"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 24. mg_landmarks
+	layer
+		name "mg_landmarks"
+		type point
+		status on
+		connectiontype ogr
+		connection "mg_landmarks.gpkg"
+		data "mg_landmarks"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Udal mugarria / Mojón de límite municipal / Municipal Boundary Landmark"
+			wfs_abstract "B5m code MG"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 end
