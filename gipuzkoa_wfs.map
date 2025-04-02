@@ -1070,4 +1070,38 @@ map
 			ows_geomtype "Geometry"
 		end
 	end
+
+	# 25. mu_public_utility_woodlands
+	layer
+		name "mu_public_utility_woodlands"
+		type polygon
+		status on
+		connectiontype ogr
+		connection "mu_public_utility_woodlands.gpkg"
+		data "mu_public_utility_woodlands"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Onura publikoko mendiak / Montes de utilidad pública / Public Utility Woodlands"
+			wfs_abstract "B5m code MU"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
 end
