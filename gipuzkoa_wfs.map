@@ -665,7 +665,7 @@ map
 		end
 	end
 
-	# 18. bi_biotopes
+	# 18.1. bi_biotopes
 	layer
 		name "bi_biotopes"
 		type polygon
@@ -688,6 +688,40 @@ map
 		metadata
 			wfs_title "Biotopoak / Biotopos / Biotopes"
 			wfs_abstract "B5m code BI"
+			wfs_extent "530000 4740000 610000 4820000"
+			wms_include_items "all"
+			gml_include_items "all"
+			gml_featureid "b5mcode"
+			gml_types "auto"
+			wfs_enable_request "*"
+			wfs_use_default_extent_for_getfeature "false"
+			ows_geomtype "Geometry"
+		end
+	end
+
+	# 18.2. vt_veteran_trees
+	layer
+		name "vt_veteran_trees"
+		type point
+		status on
+		connectiontype ogr
+		connection "bi_biotopes.gpkg"
+		data "vt_veteran_trees"
+		template "empty"
+		processing "CLOSE_CONNECTION=DEFER"
+		encoding "UTF-8"
+		projection
+			"init=epsg:25830"
+		end
+		class
+			style
+				outlinecolor 0 0 0
+				color 120 120 120
+			end
+		end
+		metadata
+			wfs_title "Zuhaitz apartekoak / Árboles singulares / Veteran Trees"
+			wfs_abstract "B5m code VT"
 			wfs_extent "530000 4740000 610000 4820000"
 			wms_include_items "all"
 			gml_include_items "all"
